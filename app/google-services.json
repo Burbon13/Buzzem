@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "514114078992",
+    "firebase_url": "https://buzzem-9aaae.firebaseio.com",
+    "project_id": "buzzem-9aaae",
+    "storage_bucket": "buzzem-9aaae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514114078992:android:9344ec1affdd6d50",
+        "android_client_info": {
+          "package_name": "com.burbon13.buzzem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514114078992-e0cid21693fcm6puolofph0evanoij40.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.burbon13.buzzem",
+            "certificate_hash": "6401f0e0a9d1eade15d2bd9794fef276e072ea97"
+          }
+        },
+        {
+          "client_id": "514114078992-e3ttgpcqgodhh0hlteg3b8fhp05fgnjk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp7OKDaJ2_8yF0JjNVa9gFnkOUgGC38GI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514114078992-e3ttgpcqgodhh0hlteg3b8fhp05fgnjk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
