@@ -6,4 +6,6 @@
     <string name="reenter_password_te">Confirm password</string>
     <string name="login_bu_text">Login</string>
     <string name="signup_bu_text">Sign up</string>
+    <string name="create_account_link">Don\'t have an account?</string>
+    <string name="sign_up_link">Tap to sing up!</string>
 </resources>

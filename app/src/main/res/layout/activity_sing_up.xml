@@ -11,7 +11,7 @@
         android:id="@+id/etEmail"
         android:layout_width="287dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="44dp"
         android:backgroundTint="@color/darkerOrange"
         android:ems="10"
         android:hint="@string/email_te"
@@ -63,11 +63,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
+        android:background="@drawable/button_background"
         android:text="@string/signup_bu_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPasswordConfirm"
-        android:background="@drawable/button_background"/>
+        app:layout_constraintTop_toBottomOf="@+id/etPasswordConfirm" />
 
     <ImageView
         android:id="@+id/ivQuestions"
