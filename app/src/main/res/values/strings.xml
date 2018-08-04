@@ -8,4 +8,6 @@
     <string name="signup_bu_text">Sign up</string>
     <string name="create_account_link">Don\'t have an account?</string>
     <string name="sign_up_link">Tap to sing up!</string>
+    <string name="email_example">example@email.com</string>
+    <string name="nr_example">69</string>
 </resources>
