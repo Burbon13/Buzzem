@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#280470</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="backgroung">#6907bf</color>
+    <color name="orangeText">#e2580d</color>
+    <color name="darkerOrange">#a33c04</color>
+    <color name="darkerPink">#de08e5</color>
+    <color name="pressedBuColor">#474cec</color>
 </resources>

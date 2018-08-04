@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Buzz\'em</string>
+    <string name="email_te">Email</string>
+    <string name="password_te">New password</string>
+    <string name="password_login_te">Password</string>
+    <string name="reenter_password_te">Confirm password</string>
+    <string name="login_bu_text">Login</string>
+    <string name="signup_bu_text">Sign up</string>
 </resources>
