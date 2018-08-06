@@ -7,7 +7,13 @@
     <string name="login_bu_text">Login</string>
     <string name="signup_bu_text">Sign up</string>
     <string name="create_account_link">Don\'t have an account?</string>
-    <string name="sign_up_link">Tap to sing up!</string>
+    <string name="sign_up_link">Tap to sign up!</string>
+    <string name="login_link">Tap for login page!</string>
     <string name="email_example">example@email.com</string>
     <string name="nr_example">69</string>
+    <string name="question_description">Question image for problems</string>
+    <string name="login_fail">Email or password is incorrect</string>
+    <string name="passwords_not_equal">The passwords are not the same</string>
+    <string name="email_sent">Confirmation email sent :)</string>
+    <string name="wait_for_verif">You must verify your email before signing in!</string>
 </resources>
