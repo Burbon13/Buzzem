@@ -16,4 +16,5 @@
     <string name="passwords_not_equal">The passwords are not the same</string>
     <string name="email_sent">Confirmation email sent :)</string>
     <string name="wait_for_verif">You must verify your email before signing in!</string>
+    <string name="search_bar">Search</string>
 </resources>

@@ -1,13 +1,12 @@
-package com.burbon13.buzzem
+package com.burbon13.buzzem.activities
 
-import android.content.ComponentCallbacks2
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import com.burbon13.buzzem.R.id.tvSignUp
+import com.burbon13.buzzem.R
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -23,9 +22,9 @@ class SignUpActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
 
         tvLogin.setOnClickListener {
-            val loginIntent = Intent(this,LoginActivity::class.java)
+            val loginIntent = Intent(this, LoginActivity::class.java)
             finish()
-            overridePendingTransition(0, 0)
+            //overridePendingTransition(0, 0)
             startActivity(loginIntent)
         }
 
@@ -38,7 +37,7 @@ class SignUpActivity : AppCompatActivity() {
         val email = etEmailSign.text.toString()
 
         if(!password1.equals(password2)) {
-            Toast.makeText(applicationContext,R.string.passwords_not_equal,Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, R.string.passwords_not_equal,Toast.LENGTH_LONG).show()
             return
         }
 
@@ -75,7 +74,7 @@ class SignUpActivity : AppCompatActivity() {
                         taskEmail.isSuccessful -> {
                             Toast.makeText(applicationContext, R.string.email_sent,
                                     Toast.LENGTH_LONG).show()
-                            addUserToDatabase(user.uid,user?.email)
+                            addUserToDatabase(user.uid,user.email)
                         }
                         else -> {
                             Toast.makeText(applicationContext,
@@ -101,7 +100,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun goToLoginActivity() {
-        val intent = Intent(this,LoginActivity::class.java)
+        val intent = Intent(this, LoginActivity::class.java)
         finish()
         startActivity(intent)
     }

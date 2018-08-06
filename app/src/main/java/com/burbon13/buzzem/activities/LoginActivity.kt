@@ -1,11 +1,11 @@
-package com.burbon13.buzzem
+package com.burbon13.buzzem.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.burbon13.buzzem.R
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -26,9 +26,9 @@ class LoginActivity : AppCompatActivity() {
         }
 
         tvSignUp.setOnClickListener {
-            val signUpIntent = Intent(this,SignUpActivity::class.java)
+            val signUpIntent = Intent(this, SignUpActivity::class.java)
             finish()
-            overridePendingTransition(0, 0)
+            //overridePendingTransition(0, 0)
             startActivity(signUpIntent)
         }
     }
@@ -66,8 +66,8 @@ class LoginActivity : AppCompatActivity() {
 
                                 val cUser = mAuth?.currentUser
                                 if(cUser?.isEmailVerified == false) {
-                                    Toast.makeText(applicationContext,R.string.wait_for_verif,
-                                            Toast.LENGTH_LONG).show()
+                                    Toast.makeText(applicationContext, R.string.wait_for_verif,
+                                            Toast.LENGTH_LONG)
                                     mAuth?.signOut()
                                 } else {
                                     goToMainActivity()
@@ -86,7 +86,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun goToMainActivity() {
-        val intent = Intent(this,MainActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         finish()
         startActivity(intent)
     }

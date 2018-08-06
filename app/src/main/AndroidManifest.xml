@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.burbon13.buzzem">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -9,30 +10,30 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/caution_sign"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        android:theme="@style/YourTheme">
+        <activity
+            android:name=".activities.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.SignUpActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".SignUpActivity"
+            android:name=".activities.LoginActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/YourTheme"/>
-        <activity
-            android:name=".LoginActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/YourTheme">
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN" />
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-                    <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".BuzzActivity"
+        <activity
+            android:name=".activities.BuzzActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/YourTheme"/>
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.SearchActivity"/>
     </application>
 
 </manifest>
