@@ -4,14 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SearchActivity"
-    android:background="@color/background_purple">
+    tools:context=".settings_activity">
 
-    <ListView
-        android:id="@+id/lvSearchedContacts"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="5pt"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="5pt"/>
 </android.support.constraint.ConstraintLayout>
