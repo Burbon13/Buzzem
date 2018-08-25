@@ -51,7 +51,8 @@ class SignUpActivity : AppCompatActivity() {
                             }
                             else -> {
                                 //TODO: Show user friendly message and send report
-                               verifyUserViaEmail()
+                                Toast.makeText(applicationContext,task.exception.toString(),Toast.LENGTH_LONG).show()
+                               //verifyUserViaEmail()
                             }
                         }
                     })
@@ -103,6 +104,13 @@ class SignUpActivity : AppCompatActivity() {
                                 Toast.LENGTH_LONG).show()
                     }
 
+                }
+        myRef.child("buzzez").child(uid).setValue(true)
+                .addOnCompleteListener { task ->
+                    if(! task.isSuccessful) {
+                        Toast.makeText(applicationContext, task.exception.toString(),
+                                Toast.LENGTH_LONG).show()
+                    }
                 }
     }
 

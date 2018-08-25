@@ -3,6 +3,7 @@ package com.burbon13.buzzem.activities
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -14,14 +15,15 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import data.decodeString
+import data.User
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.contact_ticket.view.*
 import java.util.*
+import java.util.concurrent.locks.ReentrantLock
 
 class MainActivity : AppCompatActivity() {
 
-    private val myFriendsList = ArrayList<String>()
+    private val myFriendsList = ArrayList<User>()
     private val myRef = FirebaseDatabase.getInstance().reference
     private var mAuth: FirebaseAuth = FirebaseAuth.getInstance()
     private val adapter = FriendsAdapter(myFriendsList)
@@ -34,21 +36,48 @@ class MainActivity : AppCompatActivity() {
         loadFriends()
     }
 
+    override fun onResume() {
+        super.onResume()
+        //TODO: From time to time to verify for new friends
+    }
+
+    val TAG = "MainActivity"
+    private val lock = ReentrantLock()
+
     private fun loadFriends() {
-        myRef.child("friends").child(mAuth.uid.toString()).addListenerForSingleValueEvent(
+        myRef.child("friends").child(mAuth.uid.toString()).addValueEventListener(
                 object: ValueEventListener {
                     override fun onCancelled(p0: DatabaseError) {
+                        Log.d(TAG, "Canceled ")
                         return
                     }
 
                     override fun onDataChange(dataSnapshot: DataSnapshot) {
                         val children = dataSnapshot.children
+                        myFriendsList.clear()
+                        //var many = children.toList().size
+                        //Log.d(TAG, many.toString())
                         children.forEach {
-                            myFriendsList.add(it.key.toString())
-                        }
-                        adapter.notifyDataSetChanged()
-                    }
+                            //Log.d(TAG, "Loop")
+                            myRef.child("users").child(it.key.toString()).addListenerForSingleValueEvent(object : ValueEventListener {
+                                override fun onCancelled(p0: DatabaseError) {
+                                    return
+                                }
 
+                                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                                    lock.lock()
+                                    val email = dataSnapshot.child("email").value.toString()
+                                    myFriendsList.add(User(email,it.key.toString()))
+                                    Log.d(TAG, "email got " + email)
+                                    lock.unlock()
+
+                                    adapter.notifyDataSetChanged()
+                                }
+                            })
+
+                        }
+                        //adapter.notifyDataSetChanged()
+                    }
                 }
         )
     }
@@ -74,14 +103,16 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    inner class FriendsAdapter(var myFriends:ArrayList<String>) : BaseAdapter() {
+    inner class FriendsAdapter(var myFriends:ArrayList<User>) : BaseAdapter() {
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             val view = layoutInflater.inflate(R.layout.contact_ticket,null)
-            view.tvName.text = decodeString(myFriends[position])
+            view.tvName.text = myFriends[position].email
 
             view.setOnClickListener {
                 val intent = Intent(applicationContext, BuzzActivity::class.java)
-                intent.putExtra("email", decodeString(myFriends[position]))
+                intent.putExtra("email", myFriends[position].email)
+                intent.putExtra("uid", myFriends[position].uid)
+                intent.putExtra("myUid", mAuth.uid)
                 startActivity(intent)
             }
 

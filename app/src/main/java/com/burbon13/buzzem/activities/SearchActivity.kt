@@ -17,6 +17,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import data.User
 import data.encodeString
 import kotlinx.android.synthetic.main.activity_search.*
 import kotlinx.android.synthetic.main.search_ticket.view.*
@@ -24,8 +25,8 @@ import kotlinx.android.synthetic.main.search_ticket.view.*
 class SearchActivity : AppCompatActivity() {
 
     private val myRef = FirebaseDatabase.getInstance().reference
-    private val usersList = ArrayList<String>()
-    private val userListFromQuery = ArrayList<String>()
+    private val usersList = ArrayList<User>()
+    private val userListFromQuery = ArrayList<User>()
     private val adapter = MySearchAdapter(userListFromQuery)
     private val TAG = "SearchActivity"
 
@@ -50,7 +51,8 @@ class SearchActivity : AppCompatActivity() {
                 val children = dataSnapshot.children
                 children.forEach {
                     //Toast.makeText(applicationContext,it.value.toString(),Toast.LENGTH_LONG).show()
-                    usersList.add(it.child("email").value.toString())
+                    //usersList.add(it.child("email").value.toString())
+                    usersList.add(User(it.child("email").value.toString(),it.key.toString()))
                     Log.d(TAG, "User added: " + it.value.toString())
                 }
             }
@@ -78,9 +80,9 @@ class SearchActivity : AppCompatActivity() {
 
                 Log.d(TAG, "Populating the list")
                 userListFromQuery.clear()
-                for(email in usersList) {
-                    if(email.contains(query))
-                        userListFromQuery.add(email)
+                for(user in usersList) {
+                    if(user.email.contains(query))
+                        userListFromQuery.add(user)
                 }
 
                 Log.d(TAG, "userListFromQuery size is " + userListFromQuery.size)
@@ -100,10 +102,10 @@ class SearchActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    inner class MySearchAdapter(var localUserList:ArrayList<String>) : BaseAdapter() {
+    inner class MySearchAdapter(var localUserList:ArrayList<User>) : BaseAdapter() {
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             val view = layoutInflater.inflate(R.layout.search_ticket,null)
-            view.tvSearchName.text = localUserList[position]
+            view.tvSearchName.text = localUserList[position].email
             view.setOnClickListener {
 //                Toast.makeText(applicationContext, localUserList[position] + " added",Toast.LENGTH_LONG).show()
 
@@ -111,8 +113,8 @@ class SearchActivity : AppCompatActivity() {
 
                 val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
-                myRef.child("friends").child(mAuth.uid.toString()).child(encodeString(email)).setValue(true)
-                Toast.makeText(applicationContext, localUserList[position] + " added",Toast.LENGTH_LONG).show()
+                myRef.child("friends").child(mAuth.uid.toString()).child(localUserList[position].uid).setValue(true)
+                Toast.makeText(applicationContext, localUserList[position].email + " added",Toast.LENGTH_LONG).show()
             }
             return view
         }
