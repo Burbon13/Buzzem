@@ -12,10 +12,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.burbon13.buzzem.R
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import data.encodeString
 import kotlinx.android.synthetic.main.activity_search.*
 import kotlinx.android.synthetic.main.search_ticket.view.*
 
@@ -48,7 +50,7 @@ class SearchActivity : AppCompatActivity() {
                 val children = dataSnapshot.children
                 children.forEach {
                     //Toast.makeText(applicationContext,it.value.toString(),Toast.LENGTH_LONG).show()
-                    usersList.add(it.value.toString())
+                    usersList.add(it.child("email").value.toString())
                     Log.d(TAG, "User added: " + it.value.toString())
                 }
             }
@@ -103,8 +105,14 @@ class SearchActivity : AppCompatActivity() {
             val view = layoutInflater.inflate(R.layout.search_ticket,null)
             view.tvSearchName.text = localUserList[position]
             view.setOnClickListener {
-                Toast.makeText(applicationContext,"Adding " + localUserList[position],Toast.LENGTH_LONG).show()
-                //TODO: Implement adding friends
+//                Toast.makeText(applicationContext, localUserList[position] + " added",Toast.LENGTH_LONG).show()
+
+                val email = localUserList[position]
+
+                val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
+
+                myRef.child("friends").child(mAuth.uid.toString()).child(encodeString(email)).setValue(true)
+                Toast.makeText(applicationContext, localUserList[position] + " added",Toast.LENGTH_LONG).show()
             }
             return view
         }

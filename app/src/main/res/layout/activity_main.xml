@@ -11,5 +11,8 @@
     <ListView
         android:id="@+id/lvContacts"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_margin="5pt"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="5pt"/>
 </LinearLayout>

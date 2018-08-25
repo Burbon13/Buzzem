@@ -17,4 +17,8 @@
     <string name="email_sent">Confirmation email sent :)</string>
     <string name="wait_for_verif">You must verify your email before signing in!</string>
     <string name="search_bar">Search</string>
+    <string name="account_button_settings">Account</string>
+    <string name="notifications_button_settings">Notifications</string>
+    <string name="logout_button_settings">Logout</string>
+
 </resources>

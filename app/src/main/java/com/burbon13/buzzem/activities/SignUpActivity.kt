@@ -65,8 +65,8 @@ class SignUpActivity : AppCompatActivity() {
     private fun verifyUserViaEmail() {
         Log.d(TAG, "verifyUserViaEmail()")
         val user = mAuth?.currentUser
-        Log.d(TAG, user?.uid)
-        Log.d(TAG, user?.email)
+        //Log.d(TAG, user?.uid)
+       // Log.d(TAG, user?.email)
 
         user?.sendEmailVerification()
                 ?.addOnCompleteListener(OnCompleteListener { taskEmail ->
@@ -86,11 +86,18 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     fun addUserToDatabase(uid:String, email:String?) {
+
+        if(email == null) {
+            Toast.makeText(this,"Email is null", Toast.LENGTH_LONG).show()
+            return
+        }
+
         val myRef = FirebaseDatabase.getInstance().getReference()
-        myRef.child("users").child(uid).setValue(email)
+       // myRef.child("users").child(uid).setValue(email
+        myRef.child("users").child(uid).child("email").setValue(email)
                 .addOnCompleteListener { task ->
                     if(task.isSuccessful) {
-                        Toast.makeText(applicationContext,"DATABASE WORKED", Toast.LENGTH_LONG).show()
+                        //Toast.makeText(applicationContext,"DATABASE WORKED", Toast.LENGTH_LONG).show()
                     } else {
                         Toast.makeText(applicationContext, task.exception.toString(),
                                 Toast.LENGTH_LONG).show()
