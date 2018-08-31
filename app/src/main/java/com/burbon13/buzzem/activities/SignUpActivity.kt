@@ -1,9 +1,12 @@
 package com.burbon13.buzzem.activities
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.util.Log
+import android.view.ContextThemeWrapper
 import android.view.View
 import android.widget.Toast
 import com.burbon13.buzzem.R
@@ -28,6 +31,20 @@ class SignUpActivity : AppCompatActivity() {
             startActivity(loginIntent)
         }
 
+        ivQuestionsSign.setOnClickListener{
+            val builder = AlertDialog.Builder(ContextThemeWrapper(this,R.style.AlertDialogCustom))
+//            val builder = AlertDialog.Builder(this)
+            builder.setTitle(R.string.signup_question_title)
+            builder.setCancelable(false)
+            builder.setMessage(R.string.signup_question_text)
+                    .setPositiveButton("Let's do it >:D<", DialogInterface.OnClickListener { dialog, id ->
+                        // FIRE ZE MISSILES!
+                    })
+
+
+            val alertDialog = builder.create()
+            alertDialog.show()
+        }
 
     }
 

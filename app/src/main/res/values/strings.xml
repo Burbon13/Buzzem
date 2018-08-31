@@ -20,5 +20,10 @@
     <string name="account_button_settings">Account</string>
     <string name="notifications_button_settings">Notifications</string>
     <string name="logout_button_settings">Logout</string>
-
+    <string name="login_question_text">In order to use the app you need to have an account. If you
+    are new then tap the sign up button!</string>
+    <string name="login_question_title">Welcome to Buzz\'em!</string>
+    <string name="signup_question_text">This is the sign up page!\nAfter you fill in the data
+    and hit the button you will receive a confirmation email.</string>
+    <string name="signup_question_title">Sign up to Buzz\'em!</string>
 </resources>

@@ -3,6 +3,8 @@ package com.burbon13.buzzem.activities
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
+import android.view.ContextThemeWrapper
 import android.view.View
 import android.widget.Toast
 import com.burbon13.buzzem.R
@@ -10,6 +12,10 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*
+import android.content.DialogInterface
+import android.R.string.cancel
+
+
 
 class LoginActivity : AppCompatActivity() {
     private var mAuth:FirebaseAuth? = null
@@ -22,7 +28,18 @@ class LoginActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
 
         ivQuestions.setOnClickListener {
-            //TODO: Make pop-up text
+            val builder = AlertDialog.Builder(ContextThemeWrapper(this,R.style.AlertDialogCustom))
+//            val builder = AlertDialog.Builder(this)
+            builder.setTitle(R.string.login_question_title)
+            builder.setCancelable(false)
+            builder.setMessage(R.string.login_question_text)
+                    .setPositiveButton("Got it ;)", DialogInterface.OnClickListener { dialog, id ->
+                        // FIRE ZE MISSILES!
+                    })
+
+
+            val alertDialog = builder.create()
+            alertDialog.show()
         }
 
         tvSignUp.setOnClickListener {

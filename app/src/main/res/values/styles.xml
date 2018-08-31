@@ -11,7 +11,14 @@
     <style name="YourTheme" parent="AppTheme">
         <item name="android:windowDisablePreview">true</item>
         <item name="android:windowAnimationStyle">@null</item>
-        
+    </style>
+
+    <style name="AlertDialogCustom">
+        <item name="android:textColor">#f7005e</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:background">#2598fc</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:scrollHorizontally">true</item>
     </style>
 
     

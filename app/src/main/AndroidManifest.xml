@@ -42,6 +42,13 @@
             android:name=".activities.SettingsActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
+        
+        <receiver android:name=".activities.BuzzBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.buzz.notification"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
