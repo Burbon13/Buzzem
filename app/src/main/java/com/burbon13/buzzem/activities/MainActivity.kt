@@ -81,13 +81,17 @@ class MainActivity : AppCompatActivity() {
                                 }
 
                                 override fun onDataChange(dataSnapshot: DataSnapshot) {
-                                    lock.lock()
                                     val email = dataSnapshot.child("email").value.toString()
-                                    myFriendsList.add(User(email,it.key.toString()))
-                                    Log.d(TAG, "email got " + email)
-                                    lock.unlock()
 
-                                    adapter.notifyDataSetChanged()
+                                    if(email == "null") {
+                                        myRef.child("friends").child(mAuth.uid.toString()).child(it.key.toString()).removeValue()
+                                    } else {
+                                        lock.lock()
+                                        myFriendsList.add(User(email,it.key.toString()))
+                                        Log.d(TAG, "email got " + email)
+                                        lock.unlock()
+                                        adapter.notifyDataSetChanged()
+                                    }
                                 }
                             })
 

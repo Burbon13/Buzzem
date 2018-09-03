@@ -21,5 +21,13 @@
         <item name="android:scrollHorizontally">true</item>
     </style>
 
+    <style name="AlertDialogDeleteAccount">
+        <item name="android:textColor">#f90000</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:background">#1aef25</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:scrollHorizontally">true</item>
+    </style>
+
     
 </resources>

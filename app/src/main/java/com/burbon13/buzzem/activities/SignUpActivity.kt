@@ -38,7 +38,6 @@ class SignUpActivity : AppCompatActivity() {
             builder.setCancelable(false)
             builder.setMessage(R.string.signup_question_text)
                     .setPositiveButton("Let's do it >:D<", DialogInterface.OnClickListener { dialog, id ->
-                        // FIRE ZE MISSILES!
                     })
 
 

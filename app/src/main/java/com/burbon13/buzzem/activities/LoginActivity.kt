@@ -76,18 +76,24 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun loginEvent(view:View) {
+        Log.d(TAG, "loginEvent")
         val email = etEmailSign.text.toString()
         val password = etPasswordSign.text.toString()
+
 
         //TODO:1) Understand this shit
         //TODO:2) Add loading image while loading account
         //Try to understand this part...OnCompleteListenr object?
         try {
+            if(mAuth == null)
+                Log.e(TAG, "mAuth is null")
+            else
+                Log.d(TAG, "mAuth is not null")
             mAuth?.signInWithEmailAndPassword(email,password)
                     ?.addOnCompleteListener(this, OnCompleteListener { task ->
+                        Log.d(TAG, "signInWithEmailAndPassword completed")
                         when {
                             task.isSuccessful -> {
-
                                 val cUser = mAuth?.currentUser
                                 if(cUser?.isEmailVerified == false) {
                                     Toast.makeText(applicationContext, R.string.wait_for_verif,

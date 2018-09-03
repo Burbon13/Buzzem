@@ -4,33 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#2598fc"
     android:orientation="vertical"
-    tools:context=".activities.SettingsActivity"
     android:padding="5pt"
-    android:background="@color/background_purple">
+    tools:context=".activities.AccountActivity">
 
     <Button
-        android:id="@+id/buAccount"
+        android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_background"
-        android:onClick="accountEvent"
-        android:text="@string/account_button_settings" />
+        android:onClick="resetPassEvent"
+        android:text="@string/reset_pass" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/notifications_button_settings"
-        android:background="@drawable/button_background"
-        android:layout_marginTop="5pt"/>
-
-    <Button
-        android:id="@+id/button4"
+        android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5pt"
         android:background="@drawable/button_background"
-        android:onClick="logoutEvent"
-        android:text="@string/logout_button_settings" />
+        android:onClick="changeEmailEvent"
+        android:text="@string/reset_email" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5pt"
+        android:background="@drawable/button_background"
+        android:onClick="deleteEvent"
+        android:text="@string/delete_account" />
 </LinearLayout>

@@ -26,4 +26,12 @@
     <string name="signup_question_text">This is the sign up page!\nAfter you fill in the data
     and hit the button you will receive a confirmation email.</string>
     <string name="signup_question_title">Sign up to Buzz\'em!</string>
+    <string name="reset_pass">Reset your password</string>
+    <string name="reset_email">Change your email</string>
+    <string name="delete_account">Delete account</string>
+    <string name="delete_account_alert_title">Delete your account</string>
+    <string name="delete_account_alert_text">Are you sure you want to permanently delete your account?</string>
+    <string name="reset_email_alert_title">Reset your email</string>
+    <string name="reset_email_alert_text">Fill in your new email and hit submit. After that you
+    will be signed out and will receive a new confirmation email on your new email address.</string>
 </resources>
