@@ -97,7 +97,7 @@ class LoginActivity : AppCompatActivity() {
                                 val cUser = mAuth?.currentUser
                                 if(cUser?.isEmailVerified == false) {
                                     Toast.makeText(applicationContext, R.string.wait_for_verif,
-                                            Toast.LENGTH_LONG)
+                                            Toast.LENGTH_LONG).show()
                                     mAuth?.signOut()
                                 } else {
                                     goToMainActivity()

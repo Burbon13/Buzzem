@@ -48,15 +48,15 @@ class BuzzBroadcastReceiver : BroadcastReceiver() {
                     if(strTS != "") {
                         //Log.d(TAG, "String to notify: " +  strTS)
                         dbRef.setValue(true)
-                        val myNotification = MyNotification(context!!)
-                        myNotification.notify(1,myNotification.getBuzzNotification("New Buzz",strTS))
-                        //val intent_new = Intent(context, BuzzNotification::class.java)
-                        //Aici ai ramas - sa setezi falgurile corespunzator ptr a nu aparea mai multe activity-uri
-                        //intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-                        //context.startActivity(intent_new)
-                    }
 
-                    //Log.d(TAG, "Reset DB")
+                        val thr = DoTheThings(context!!,strTS)
+                        thr.start()
+
+                        //App crashes on lower api versions
+                        val intentNew = Intent(context, BuzzNotification::class.java)
+                        intentNew.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        context.startActivity(intentNew)
+                    }
                 }
 
             })
@@ -64,4 +64,12 @@ class BuzzBroadcastReceiver : BroadcastReceiver() {
         }
     }
 
+
+    inner class DoTheThings(var context: Context, var strTS:String): Thread() {
+
+        override fun run() {
+            val myNotification = MyNotification(context)
+            myNotification.notify(1,myNotification.getBuzzNotification("New Buzz",strTS))
+        }
+    }
 }

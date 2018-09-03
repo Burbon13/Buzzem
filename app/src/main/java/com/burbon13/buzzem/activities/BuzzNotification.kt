@@ -2,6 +2,7 @@ package com.burbon13.buzzem.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import com.burbon13.buzzem.R
@@ -28,6 +29,10 @@ class BuzzNotification : AppCompatActivity() {
 
     fun finishInSeconds() {
         Thread.sleep(6000)
+        finish()
+    }
+
+    fun closeEvent(view: View) {
         finish()
     }
 }

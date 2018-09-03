@@ -34,4 +34,5 @@
     <string name="reset_email_alert_title">Reset your email</string>
     <string name="reset_email_alert_text">Fill in your new email and hit submit. After that you
     will be signed out and will receive a new confirmation email on your new email address.</string>
+    <string name="close_bu">Close</string>
 </resources>
