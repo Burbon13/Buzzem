@@ -14,11 +14,12 @@ import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*
 import android.content.DialogInterface
 import android.R.string.cancel
-
+import android.util.Log
 
 
 class LoginActivity : AppCompatActivity() {
     private var mAuth:FirebaseAuth? = null
+    private val TAG = "LoginActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +27,9 @@ class LoginActivity : AppCompatActivity() {
 
         //Initialize FirebaseAuth instance
         mAuth = FirebaseAuth.getInstance()
+        mAuth!!.addAuthStateListener {
+
+        }
 
         ivQuestions.setOnClickListener {
             val builder = AlertDialog.Builder(ContextThemeWrapper(this,R.style.AlertDialogCustom))
@@ -57,6 +61,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun updateUI(currentUser:FirebaseUser?) {
+
+        Log.d(TAG, "updateUI, current user: " + currentUser.toString())
+
         if(currentUser != null) {
 
             if(currentUser.isEmailVerified)

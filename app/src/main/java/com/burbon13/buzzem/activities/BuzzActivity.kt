@@ -16,6 +16,7 @@ class BuzzActivity : AppCompatActivity() {
 
     var friendsUid:String = ""
     var myUid:String = ""
+    var myEmail:String = ""
     val dbRef = FirebaseDatabase.getInstance().reference
 
 
@@ -32,6 +33,7 @@ class BuzzActivity : AppCompatActivity() {
         tvNameToBuzz.text = extras.getString("email")
         friendsUid = extras.getString("uid")
         myUid = extras.getString("myUid")
+        myEmail = extras.getString("myEmail")
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -43,7 +45,7 @@ class BuzzActivity : AppCompatActivity() {
     fun setBuzzButton() {
         ivBuzz.setOnClickListener {
             //Toast.makeText(applicationContext,friendsUid,Toast.LENGTH_LONG).show()
-            dbRef.child("buzzez").child(friendsUid).child(myUid).setValue(true)
+            dbRef.child("buzzez").child(friendsUid).child(myUid).setValue(myEmail)
 
             val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 

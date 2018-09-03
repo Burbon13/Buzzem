@@ -14,10 +14,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.burbon13.buzzem.R
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
 import data.User
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.contact_ticket.view.*
@@ -27,13 +24,16 @@ import java.util.concurrent.locks.ReentrantLock
 class MainActivity : AppCompatActivity() {
 
     private val myFriendsList = ArrayList<User>()
-    private val myRef = FirebaseDatabase.getInstance().reference
+    private var myRef = FirebaseDatabase.getInstance().reference
     private var mAuth: FirebaseAuth = FirebaseAuth.getInstance()
     private val adapter = FriendsAdapter(myFriendsList)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //FirebaseDatabase.getInstance().setLogLevel(Logger.Level.DEBUG)
+        //myRef = FirebaseDatabase.getInstance().reference
 
         lvContacts.adapter = adapter
         loadFriends()
@@ -129,6 +129,7 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("email", myFriends[position].email)
                 intent.putExtra("uid", myFriends[position].uid)
                 intent.putExtra("myUid", mAuth.uid)
+                intent.putExtra("myEmail", mAuth.currentUser?.email)
                 startActivity(intent)
             }
 

@@ -28,7 +28,8 @@
         android:id="@+id/button4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/logout_button_settings"
+        android:layout_marginTop="5pt"
         android:background="@drawable/button_background"
-        android:layout_marginTop="5pt"/>
+        android:onClick="logoutEvent"
+        android:text="@string/logout_button_settings" />
 </LinearLayout>
