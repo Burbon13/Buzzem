@@ -56,11 +56,11 @@
         </receiver>
 
         <activity android:name=".activities.BuzzNotification" />
-        <activity android:name=".activities.AccountActivity"
+        <activity
+            android:name=".activities.AccountActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activities.NotificationsSettingsActivity"></activity>
     </application>
 
 </manifest>

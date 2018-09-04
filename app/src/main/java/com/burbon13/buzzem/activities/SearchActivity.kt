@@ -1,7 +1,9 @@
 package com.burbon13.buzzem.activities
 
+import android.app.Activity
 import android.app.SearchManager
 import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.ConditionVariable
@@ -115,6 +117,12 @@ class SearchActivity : AppCompatActivity() {
 
                 myRef.child("friends").child(mAuth.uid.toString()).child(localUserList[position].uid).setValue(true)
                 Toast.makeText(applicationContext, localUserList[position].email + " added",Toast.LENGTH_LONG).show()
+
+                val data = Intent()
+                data.putExtra("was_added", "1")
+                Log.d(TAG, "RESULT_OK " + Activity.RESULT_OK.toString())
+                setResult(Activity.RESULT_OK, data)
+                finish()
             }
             return view
         }

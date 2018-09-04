@@ -1,5 +1,6 @@
 package com.burbon13.buzzem.activities
 
+import android.app.Activity
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
@@ -20,13 +21,16 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.contact_ticket.view.*
 import java.util.*
 import java.util.concurrent.locks.ReentrantLock
+import kotlin.collections.HashSet
 
 class MainActivity : AppCompatActivity() {
 
     private val myFriendsList = ArrayList<User>()
+    private val myFriendsHashMap = HashSet<String>()
     private var myRef = FirebaseDatabase.getInstance().reference
     private var mAuth: FirebaseAuth = FirebaseAuth.getInstance()
     private val adapter = FriendsAdapter(myFriendsList)
+    val TAG = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,9 +39,39 @@ class MainActivity : AppCompatActivity() {
         //FirebaseDatabase.getInstance().setLogLevel(Logger.Level.DEBUG)
         //myRef = FirebaseDatabase.getInstance().reference
 
+        setDataSharedPref()
         lvContacts.adapter = adapter
+        Log.d(TAG, "loadFriends()")
         loadFriends()
-        setAlarmManager()
+    }
+
+    private fun setDataSharedPref() {
+//        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+//        if(!prefs.getBoolean("first_time", false)) {
+//            //One lifetime code
+//            Log.d(TAG, "One lifetime run")
+//
+//            val editor = prefs.edit()
+//            editor.putInt("time_for_notification", 5000)
+//
+//            //Set it to not run again
+//            editor.putBoolean("first_time", true)
+//            editor.apply()
+//        }
+
+        val sharedPref = getSharedPreferences("buzz_app_settings", Context.MODE_PRIVATE)
+        if(!sharedPref.getBoolean("first_time", false)) {
+            Log.d(TAG, "Shared pref setup")
+
+            val editor = sharedPref.edit()
+            editor.putBoolean("first_time", true)
+            editor.putLong("notification_miliseconds", 5000)
+            editor.putBoolean("flash_enabled", true)
+            editor.putBoolean("vibration_enabled", true)
+            editor.putBoolean("wake_up_screen_enabled", true)
+            editor.putBoolean("notification_enabled", true)
+            editor.apply()
+        }
     }
 
     fun setAlarmManager() {
@@ -46,6 +80,8 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(applicationContext,BuzzBroadcastReceiver::class.java)
         intent.action = "com.buzz.notification"
         intent.putExtra("uid",mAuth.uid)
+        Log.d(TAG, "myFirendsHashMap.size = " + myFriendsHashMap.size.toString())
+        intent.putExtra("friends", myFriendsHashMap)
 
         val pendingIntent = PendingIntent.getBroadcast(applicationContext,0,intent,PendingIntent.FLAG_UPDATE_CURRENT)
 
@@ -55,9 +91,9 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         //TODO: From time to time to verify for new friends
+        //loadFriends()
     }
 
-    val TAG = "MainActivity"
     private val lock = ReentrantLock()
 
     private fun loadFriends() {
@@ -71,10 +107,10 @@ class MainActivity : AppCompatActivity() {
                     override fun onDataChange(dataSnapshot: DataSnapshot) {
                         val children = dataSnapshot.children
                         myFriendsList.clear()
-                        //var many = children.toList().size
-                        //Log.d(TAG, many.toString())
+                        var many = dataSnapshot.childrenCount
+                        Log.d(TAG, "childrenCount = " + many.toString())
                         children.forEach {
-                            //Log.d(TAG, "Loop")
+                            Log.d(TAG, "Loop: " + it.key.toString())
                             myRef.child("users").child(it.key.toString()).addListenerForSingleValueEvent(object : ValueEventListener {
                                 override fun onCancelled(p0: DatabaseError) {
                                     return
@@ -84,19 +120,26 @@ class MainActivity : AppCompatActivity() {
                                     val email = dataSnapshot.child("email").value.toString()
 
                                     if(email == "null") {
+                                        Log.d(TAG, "Not my friend!")
                                         myRef.child("friends").child(mAuth.uid.toString()).child(it.key.toString()).removeValue()
                                     } else {
                                         lock.lock()
                                         myFriendsList.add(User(email,it.key.toString()))
+                                        myFriendsHashMap.add(it.key.toString())
                                         Log.d(TAG, "email got " + email)
+                                        many --
+
+                                        if(many == 0L) {
+                                            adapter.notifyDataSetChanged()
+                                            setAlarmManager()
+                                            Log.d(TAG, "notifyDataSetChanged()")
+                                        }
                                         lock.unlock()
-                                        adapter.notifyDataSetChanged()
                                     }
                                 }
                             })
-
                         }
-                        //adapter.notifyDataSetChanged()
+                        adapter.notifyDataSetChanged()
                     }
                 }
         )
@@ -112,7 +155,9 @@ class MainActivity : AppCompatActivity() {
         when(item?.itemId) {
             R.id.addItem -> {
                 val intent = Intent(this, SearchActivity::class.java)
-                startActivity(intent)
+                //startActivity(intent)
+                Log.d(TAG, "startActivityForResult()")
+                startActivityForResult(intent,1234)
             }
             R.id.settingsItem -> {
                 val intent = Intent(this, SettingsActivity::class.java)
@@ -121,6 +166,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        Log.d(TAG, "onActivityResult")
+        if(requestCode == 1234) {
+            if(resultCode == Activity.RESULT_OK) {
+                setAlarmManager()
+            }
+        }
     }
 
     inner class FriendsAdapter(var myFriends:ArrayList<User>) : BaseAdapter() {
