@@ -35,4 +35,18 @@
     <string name="reset_email_alert_text">Fill in your new email and hit submit. After that you
     will be signed out and will receive a new confirmation email on your new email address.</string>
     <string name="close_bu">Close</string>
+    <string name="flash_enabled">Flash</string>
+    <string name="vibration_enabled">Vibration</string>
+    <string name="wake_up_screen_enabled">Wake up screen</string>
+    <string name="notification_enabled">Notification message</string>
+    <string name="notification_miliseconds">Buzz duration</string>
+    <string name="seconds">seconds</string>
+    <string name="notif_question_title">Questions</string>
+    <string name="notif_item_title">Customize everything!</string>
+    <string name="notif_item_button">Cool (-_-)</string>
+    <string name="notif_item_message">You can customize every aspect of your buzzes.
+    Don\'t want to be flashed? Uncheck that motherf***er and no more flashing, that simple!
+    Buzzes are way too short for you to hear them? Make them longer, just slide that seek bar
+    and watch how magic happens :)</string>
+
 </resources>

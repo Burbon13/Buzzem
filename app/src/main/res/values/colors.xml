@@ -2,10 +2,13 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#280470</color>
+    <color name="black">#000000</color>
     <color name="colorAccent">#FF4081</color>
     <color name="background_purple">#6907bf</color>
     <color name="orangeText">#e2580d</color>
     <color name="darkerOrange">#a33c04</color>
     <color name="darkerPink">#de08e5</color>
     <color name="pressedBuColor">#474cec</color>
+    <color name="green">#00e600</color>
+    <color name="beautMagenta">#cc33ff</color>
 </resources>

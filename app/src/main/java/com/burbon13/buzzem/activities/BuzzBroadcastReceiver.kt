@@ -62,14 +62,14 @@ class BuzzBroadcastReceiver : BroadcastReceiver() {
         val sharedPref = context!!.getSharedPreferences(sharedPrefName, Context.MODE_PRIVATE)
 
         //loading the current settings
-        val timeNotification = sharedPref.getInt("notification_milliseconds", 5001)
+        val timeNotification = sharedPref.getLong("notification_miliseconds", 5001)
         val flashEnabled = sharedPref.getBoolean("flash_enabled", true)
         val vibrationEnabled = sharedPref.getBoolean("vibration_enabled", true)
         val wakeUpScreenEnabled = sharedPref.getBoolean("wake_up_screen_enabled", true)
         val notificationEnabled = sharedPref.getBoolean("notification_enabled", true)
 
         val bundle = Bundle()
-        bundle.putInt("notification_milliseconds", timeNotification)
+        bundle.putLong("notification_miliseconds", timeNotification)
         bundle.putBoolean("flash_enabled",flashEnabled)
         bundle.putBoolean("vibration_enabled",vibrationEnabled)
         bundle.putBoolean("notification_enabled",notificationEnabled)

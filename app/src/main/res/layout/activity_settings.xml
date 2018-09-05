@@ -21,9 +21,10 @@
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/notifications_button_settings"
+        android:layout_marginTop="5pt"
         android:background="@drawable/button_background"
-        android:layout_marginTop="5pt"/>
+        android:onClick="notificationsEvent"
+        android:text="@string/notifications_button_settings" />
 
     <Button
         android:id="@+id/button4"

@@ -29,5 +29,13 @@
         <item name="android:scrollHorizontally">true</item>
     </style>
 
+    <style name="AlertDialogNotificationsSettings">
+        <item name="android:textColor">#f90000</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:scrollHorizontally">true</item>
+    </style>
+
     
 </resources>

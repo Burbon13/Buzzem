@@ -1,9 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.NotificationsSettingsActivity">
+    android:padding="10pt"
+    android:gravity="center_horizontal"
+    tools:context=".activities.NotificationsSettingsActivity"
+    android:background="#2598fc">
 
-</android.support.constraint.ConstraintLayout>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5pt"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvFlash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/flash_enabled"
+            android:textColor="@color/background_purple"
+            android:textSize="24sp" />
+
+        <Switch
+            android:id="@+id/switchFlash"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:checked="true"
+            android:gravity="center" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5pt"
+
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvVibration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/vibration_enabled"
+            android:textColor="#e60000"
+            android:textSize="24sp" />
+
+        <Switch
+            android:id="@+id/switchVibration"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:checked="true"
+            android:gravity="center" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5pt"
+
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvWake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/wake_up_screen_enabled"
+            android:textColor="#00cc00"
+            android:textSize="24sp" />
+
+        <Switch
+            android:id="@+id/switchWake"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:checked="true"
+            android:gravity="center" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginBottom="5pt"
+        >
+
+        <TextView
+            android:id="@+id/tvNotif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/notification_enabled"
+            android:textColor="#850B85"
+            android:textSize="24sp" />
+
+        <Switch
+            android:id="@+id/switchNotif"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:checked="true" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvBuzz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5pt"
+                android:gravity="center_horizontal"
+                android:text="@string/notification_miliseconds"
+                android:textColor="#ffff00"
+                android:textSize="24sp" />
+
+            <SeekBar
+                android:id="@+id/seekBarBuzz"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="20" />
+        </LinearLayout>
+
+    </TableRow>
+</TableLayout>

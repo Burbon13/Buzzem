@@ -33,7 +33,7 @@ class MyNotification(context:Context, var bundle:Bundle) : ContextWrapper(contex
 
     init {
         //Get values from bundle
-        timeNotification = bundle.getLong("notification_milliseconds", 5001)
+        timeNotification = bundle.getLong("notification_miliseconds", 5001)
         flashEnabled = bundle.getBoolean("flash_enabled", true)
         vibrationEnabled = bundle.getBoolean("vibration_enabled", true)
         notificationEnabled = bundle.getBoolean("notification_enabled", true)
