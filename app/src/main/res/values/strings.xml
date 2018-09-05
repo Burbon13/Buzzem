@@ -48,5 +48,10 @@
     Don\'t want to be flashed? Uncheck that motherf***er and no more flashing, that simple!
     Buzzes are way too short for you to hear them? Make them longer, just slide that seek bar
     and watch how magic happens :)</string>
-
+    <string name="to_know">To know</string>
+    <string name="to_know_search">Here you can search for users who are NOT your friends already.
+    The text to search must contain at least 5 characters. To add someone to your friends list just tap
+    on their email and that\'s it! Keep in mind that you are allowed to have at max 10 friends, choose
+    your friends carefully ;)</string>
+    <string name="yes_sir">Yes, sir!</string>
 </resources>

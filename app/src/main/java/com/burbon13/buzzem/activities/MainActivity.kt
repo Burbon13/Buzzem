@@ -2,6 +2,7 @@ package com.burbon13.buzzem.activities
 
 import android.app.Activity
 import android.app.AlarmManager
+import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
@@ -30,7 +31,8 @@ class MainActivity : AppCompatActivity() {
     private var myRef = FirebaseDatabase.getInstance().reference
     private var mAuth: FirebaseAuth = FirebaseAuth.getInstance()
     private val adapter = FriendsAdapter(myFriendsList)
-    val TAG = "MainActivity"
+    private val TAG = "MainActivity"
+    private val lock = ReentrantLock()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,20 +48,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setDataSharedPref() {
-//        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-//        if(!prefs.getBoolean("first_time", false)) {
-//            //One lifetime code
-//            Log.d(TAG, "One lifetime run")
-//
-//            val editor = prefs.edit()
-//            editor.putInt("time_for_notification", 5000)
-//
-//            //Set it to not run again
-//            editor.putBoolean("first_time", true)
-//            editor.apply()
-//        }
-
         val sharedPref = getSharedPreferences("buzz_app_settings", Context.MODE_PRIVATE)
+        //Code which runs only once
         if(!sharedPref.getBoolean("first_time", false)) {
             Log.d(TAG, "Shared pref setup")
 
@@ -82,19 +72,25 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("uid",mAuth.uid)
         Log.d(TAG, "myFirendsHashMap.size = " + myFriendsHashMap.size.toString())
         intent.putExtra("friends", myFriendsHashMap)
-
         val pendingIntent = PendingIntent.getBroadcast(applicationContext,0,intent,PendingIntent.FLAG_UPDATE_CURRENT)
-
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.timeInMillis,60000,pendingIntent)
     }
 
     override fun onResume() {
         super.onResume()
-        //TODO: From time to time to verify for new friends
-        //loadFriends()
+        clearNotifications()
     }
 
-    private val lock = ReentrantLock()
+    private fun clearNotifications() {
+        //In case you are using this in the Main Thread and you are sure that it’s not going
+        // to be used in different threads, then you can avoid all of this
+        // overhead to make it Thread Safe and just use it like this:
+        val notificationManager by lazy (LazyThreadSafetyMode.NONE) {
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager }
+        //And that’s it! you are using a faster implementation of the Lazy Delegated Property.
+        notificationManager.cancel(1)
+
+    }
 
     private fun loadFriends() {
         myRef.child("friends").child(mAuth.uid.toString()).addValueEventListener(
@@ -139,7 +135,6 @@ class MainActivity : AppCompatActivity() {
                                 }
                             })
                         }
-                        adapter.notifyDataSetChanged()
                     }
                 }
         )
@@ -155,8 +150,9 @@ class MainActivity : AppCompatActivity() {
         when(item?.itemId) {
             R.id.addItem -> {
                 val intent = Intent(this, SearchActivity::class.java)
-                //startActivity(intent)
                 Log.d(TAG, "startActivityForResult()")
+                intent.putExtra("my_email", mAuth.currentUser?.email.toString())
+                intent.putExtra("friends", myFriendsHashMap)
                 startActivityForResult(intent,1234)
             }
             R.id.settingsItem -> {

@@ -1,8 +1,11 @@
 package com.burbon13.buzzem.activities
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
+import android.view.ContextThemeWrapper
 import android.view.View
 import android.widget.Toast
 import com.burbon13.buzzem.R
@@ -18,10 +21,16 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     fun logoutEvent(view: View) {
-        mAuth.signOut()
-        val intent = Intent(this,LoginActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-        startActivity(intent)
+        val builder = AlertDialog.Builder(ContextThemeWrapper(this,R.style.AlertDialogNotificationsSettings))
+        builder.setTitle("Logout").setMessage("Are you sure you want to logout?")
+                .setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, which ->
+                    mAuth.signOut()
+                    val intent = Intent(this,LoginActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                    startActivity(intent)
+                })
+                .setNegativeButton("No", DialogInterface.OnClickListener { dialog, which ->  })
+        builder.create().show()
     }
 
     fun accountEvent(view:View) {

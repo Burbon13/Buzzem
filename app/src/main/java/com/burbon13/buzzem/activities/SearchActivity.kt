@@ -1,17 +1,16 @@
 package com.burbon13.buzzem.activities
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.app.SearchManager
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.ConditionVariable
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.*
 import com.burbon13.buzzem.R
 import com.google.firebase.auth.FirebaseAuth
@@ -31,30 +30,36 @@ class SearchActivity : AppCompatActivity() {
     private val userListFromQuery = ArrayList<User>()
     private val adapter = MySearchAdapter(userListFromQuery)
     private val TAG = "SearchActivity"
+    private var myEmail = ""
+    private var friendsHashSet = HashSet<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
 
+        loadMyData()
         getUsers()
         lvSearchedContacts.adapter = adapter
+    }
+
+    private fun loadMyData() {
+        val bundle = intent.extras
+        myEmail = bundle.getString("my_email")
+        friendsHashSet = intent.getSerializableExtra("friends") as HashSet<String>
     }
 
     private fun getUsers() {
         Log.d(TAG, "Getting users from database")
         myRef.child("users").addListenerForSingleValueEvent(object: ValueEventListener{
-            override fun onCancelled(p0: DatabaseError) {
-                //Toast.makeText(applicationContext,"Canceled",Toast.LENGTH_LONG).show()
-            }
+            override fun onCancelled(p0: DatabaseError) {}
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 //save to usersList
                 usersList.clear()
                 val children = dataSnapshot.children
                 children.forEach {
-                    //Toast.makeText(applicationContext,it.value.toString(),Toast.LENGTH_LONG).show()
-                    //usersList.add(it.child("email").value.toString())
-                    usersList.add(User(it.child("email").value.toString(),it.key.toString()))
+                    if(!friendsHashSet.contains(it.key))
+                        usersList.add(User(it.child("email").value.toString(),it.key.toString()))
                     Log.d(TAG, "User added: " + it.value.toString())
                 }
             }
@@ -77,21 +82,28 @@ class SearchActivity : AppCompatActivity() {
 
                 if(query == null) {
                     Log.d(TAG, "Query is null, return false")
-                    return false
+                    return true
+                }
+
+                if(query.length < 5) {
+                    Toast.makeText(applicationContext, "Search string must contain at least 5 characters", Toast.LENGTH_LONG).show()
+                    return true
                 }
 
                 Log.d(TAG, "Populating the list")
                 userListFromQuery.clear()
                 for(user in usersList) {
-                    if(user.email.contains(query))
+                    if(user.email.contains(query) && user.email != myEmail)
                         userListFromQuery.add(user)
+                    if(userListFromQuery.size >= 20)
+                        break
                 }
 
                 Log.d(TAG, "userListFromQuery size is " + userListFromQuery.size)
                 Log.d(TAG, "Notifying data change")
                 adapter.notifyDataSetChanged()
 
-                return true
+                return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
@@ -104,12 +116,28 @@ class SearchActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when(item?.itemId) {
+            R.id.search_questions -> {
+                popUpAlertDialogForInfo()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun popUpAlertDialogForInfo() {
+        val builder = AlertDialog.Builder(ContextThemeWrapper(this,R.style.AlertDialogNotificationsSettings))
+        builder.setTitle(R.string.to_know)
+        builder.setMessage(R.string.to_know_search)
+        builder.setPositiveButton(R.string.yes_sir, DialogInterface.OnClickListener { dialog, which -> })
+        builder.create().show()
+    }
+
     inner class MySearchAdapter(var localUserList:ArrayList<User>) : BaseAdapter() {
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             val view = layoutInflater.inflate(R.layout.search_ticket,null)
             view.tvSearchName.text = localUserList[position].email
             view.setOnClickListener {
-//                Toast.makeText(applicationContext, localUserList[position] + " added",Toast.LENGTH_LONG).show()
 
                 val email = localUserList[position]
 

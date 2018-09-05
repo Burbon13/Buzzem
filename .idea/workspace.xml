@@ -14,9 +14,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ed4a464-de84-4391-b04a-d3a407c59cdf" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/raise_hand.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/raise_hand_2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/notifications_menu.xml" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" />
@@ -28,15 +25,12 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/BuzzBroadcastReceiver.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/BuzzBroadcastReceiver.kt" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/MainActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/MainActivity.kt" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/Notification.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/Notification.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/NotificationsSettingsActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/NotificationsSettingsActivity.kt" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/SearchActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/SearchActivity.kt" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/SettingsActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/SettingsActivity.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_notifications_settings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_notifications_settings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/search_menu.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/search_menu.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,64 +53,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NotificationsSettingsActivity.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/NotificationsSettingsActivity.kt">
+      <file leaf-file-name="SearchActivity.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/SearchActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="97">
+              <caret line="128" column="66" lean-forward="false" selection-start-line="128" selection-start-column="66" selection-end-line="128" selection-end-column="66" />
               <folding>
-                <element signature="e#40#501#0" expanded="true" />
-                <element signature="e#1675#1729#0" expanded="true" />
-                <element signature="e#1767#1804#0" expanded="true" />
-                <element signature="e#3097#3151#0" expanded="true" />
-                <element signature="e#3189#3226#0" expanded="true" />
-                <element signature="e#4469#4494#1" expanded="true" />
-                <element signature="e#4507#4534#1" expanded="true" />
-                <element signature="e#4571#4597#1" expanded="true" />
+                <element signature="e#4053#4128#0" expanded="false" />
+                <element signature="e#4632#4648#1" expanded="true" />
+                <element signature="e#4677#4700#1" expanded="true" />
+                <element signature="e#4736#4752#1" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <file leaf-file-name="LoginActivity.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/LoginActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+            <state relative-caret-position="232">
+              <caret line="39" column="67" lean-forward="false" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="67" />
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-manifest">
-            <state />
-          </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_notifications_settings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_notifications_settings.xml">
-          <provider selected="true" editor-type-id="android-designer2">
+      <file leaf-file-name="activity_search.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_search.xml">
+          <provider editor-type-id="android-designer2">
             <state />
           </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-              <folding>
-                <element signature="e#859#882#0" expanded="true" />
-                <element signature="e#1667#1694#0" expanded="true" />
-                <element signature="e#2461#2493#0" expanded="true" />
-                <element signature="e#3264#3294#0" expanded="true" />
-              </folding>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" column="35" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="15" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notifications_menu.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/notifications_menu.xml">
+      <file leaf-file-name="search_menu.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/search_menu.xml">
           <provider selected="true" editor-type-id="android-designer2">
             <state />
           </provider>
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="72">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="331">
+              <caret line="53" column="100" lean-forward="false" selection-start-line="53" selection-start-column="100" selection-end-line="53" selection-end-column="100" />
               <folding />
             </state>
           </provider>
@@ -125,51 +117,20 @@
       <file leaf-file-name="BuzzBroadcastReceiver.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/BuzzBroadcastReceiver.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="90" column="40" lean-forward="false" selection-start-line="90" selection-start-column="40" selection-end-line="90" selection-end-column="40" />
+            <state relative-caret-position="237">
+              <caret line="27" column="12" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="85" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Notification.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/Notification.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-576">
-              <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="42" column="27" lean-forward="false" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/MainActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="67" column="52" lean-forward="false" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="52" />
+            <state relative-caret-position="-1710">
+              <caret line="29" column="32" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="32" />
               <folding>
-                <element signature="e#40#777#0" expanded="true" />
-                <element signature="e#4524#4602#0" expanded="false" />
+                <element signature="e#4674#4752#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -204,6 +165,9 @@
       <find>pref</find>
       <find>marginBottom</find>
       <find>SHARED</find>
+      <find>Main</find>
+      <find>myFriendsHashMap</find>
+      <find>Searc</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2347,7 +2311,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/SignUpActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/LoginActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/search_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/search_ticket.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_search.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_settings_activity.xml" />
@@ -2368,24 +2331,25 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_buzz_notification.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/BuzzNotification.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/data/User.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/SearchActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/MainActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/SettingsActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/notifications_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/SignUpActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_notifications_settings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/NotificationsSettingsActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/Notification.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/BuzzBroadcastReceiver.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/SettingsActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/Notification.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/MainActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/search_menu.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/SearchActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-1928" />
     <option name="y" value="-416" />
     <option name="width" value="1936" />
@@ -2418,6 +2382,11 @@
             <path>
               <item name="Buzzem" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="Buzzem" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
             </path>
             <path>
               <item name="Buzzem" type="1abcf292:AndroidViewProjectNode" />
@@ -2669,7 +2638,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-416" width="1936" height="1056" extended-state="6" />
+    <frame x="-1928" y="-416" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2683,7 +2652,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33224043" sideWeight="0.49413645" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32467532" sideWeight="0.4904051" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3939394" sideWeight="0.4904051" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2715,17 +2684,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -2801,16 +2759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/search_menu.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/SettingsActivity.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
       <provider editor-type-id="android-designer2">
@@ -2830,17 +2778,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_search.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="35" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="15" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -2972,27 +2909,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-27/android/app/NotificationManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="294" column="16" lean-forward="false" selection-start-line="294" selection-start-column="16" selection-end-line="294" selection-end-column="16" />
-          <folding>
-            <element signature="e#10707#10708#0" expanded="false" />
-            <element signature="e#10753#10754#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/SearchActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-          <folding>
-            <element signature="e#3650#3725#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_account.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3012,14 +2928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/LoginActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="99" column="68" lean-forward="false" selection-start-line="99" selection-start-column="68" selection-end-line="99" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3027,14 +2935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/SettingsActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="33" column="28" lean-forward="false" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -3058,14 +2958,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
@@ -3074,11 +2966,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/SettingsActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="42" column="27" lean-forward="false" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+        <state relative-caret-position="-108">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_notifications_settings.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <element signature="e#859#882#0" expanded="false" />
+            <element signature="e#1667#1694#0" expanded="false" />
+            <element signature="e#2461#2493#0" expanded="false" />
+            <element signature="e#3264#3294#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3093,26 +3001,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_notifications_settings.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-27/android/app/NotificationManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="270" column="16" lean-forward="false" selection-start-line="270" selection-start-column="16" selection-end-line="270" selection-end-column="16" />
           <folding>
-            <element signature="e#859#882#0" expanded="true" />
-            <element signature="e#1667#1694#0" expanded="true" />
-            <element signature="e#2461#2493#0" expanded="true" />
-            <element signature="e#3264#3294#0" expanded="true" />
+            <element signature="e#10707#10708#0" expanded="false" />
+            <element signature="e#10753#10754#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/Notification.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="31" column="47" lean-forward="false" selection-start-line="31" selection-start-column="47" selection-end-line="33" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+        <state relative-caret-position="1080">
+          <caret line="60" column="47" lean-forward="false" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -3120,47 +3039,88 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/BuzzBroadcastReceiver.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="90" column="40" lean-forward="false" selection-start-line="90" selection-start-column="40" selection-end-line="90" selection-end-column="40" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_search.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/Notification.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-576">
-          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        <state relative-caret-position="270">
+          <caret line="15" column="35" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="15" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/NotificationsSettingsActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#501#0" expanded="true" />
-            <element signature="e#1675#1729#0" expanded="true" />
-            <element signature="e#1767#1804#0" expanded="true" />
-            <element signature="e#3097#3151#0" expanded="true" />
-            <element signature="e#3189#3226#0" expanded="true" />
-            <element signature="e#4469#4494#1" expanded="true" />
-            <element signature="e#4507#4534#1" expanded="true" />
-            <element signature="e#4571#4597#1" expanded="true" />
-          </folding>
+        <state relative-caret-position="-596">
+          <caret line="46" column="47" lean-forward="true" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/BuzzBroadcastReceiver.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="27" column="12" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.2.60/e5c7258c893cd3fa12b85eb535dcc5d0961ba4c7/kotlin-stdlib-1.2.60-sources.jar!/kotlin/collections/TypeAliases.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/search_menu.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/MainActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="67" column="52" lean-forward="false" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="52" />
+        <state relative-caret-position="-1710">
+          <caret line="29" column="32" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="32" />
           <folding>
-            <element signature="e#40#777#0" expanded="true" />
-            <element signature="e#4524#4602#0" expanded="false" />
+            <element signature="e#4674#4752#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/LoginActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="39" column="67" lean-forward="false" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/burbon13/buzzem/activities/SearchActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="128" column="66" lean-forward="false" selection-start-line="128" selection-start-column="66" selection-end-line="128" selection-end-column="66" />
+          <folding>
+            <element signature="e#4053#4128#0" expanded="false" />
+            <element signature="e#4632#4648#1" expanded="true" />
+            <element signature="e#4677#4700#1" expanded="true" />
+            <element signature="e#4736#4752#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="53" column="100" lean-forward="false" selection-start-line="53" selection-start-column="100" selection-end-line="53" selection-end-column="100" />
+          <folding />
         </state>
       </provider>
     </entry>

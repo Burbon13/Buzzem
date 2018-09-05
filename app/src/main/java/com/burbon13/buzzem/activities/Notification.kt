@@ -3,8 +3,10 @@ package com.burbon13.buzzem.activities
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
 import android.content.ContextWrapper
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Camera
 import android.graphics.Color
@@ -52,18 +54,25 @@ class MyNotification(context:Context, var bundle:Bundle) : ContextWrapper(contex
         }
     }
 
+    private fun getPendingIntentForBuzz() : PendingIntent {
+        val resultIntent = Intent(applicationContext, BuzzNotification::class.java)
+        return PendingIntent.getActivity(applicationContext,0,resultIntent,0)
+    }
+
     fun getBuzzNotification(title:String, body:String) : Notification.Builder {
         if(Build.VERSION.SDK_INT >= 26)
             return Notification.Builder(applicationContext, FIRST_CHANNEL)
                     .setContentText(body)
                     .setContentTitle(title)
                     .setSmallIcon(R.drawable.caution_sign)
+                    .setContentIntent(getPendingIntentForBuzz())
 
         return Notification.Builder(applicationContext)
                 .setContentText(body)
                 .setContentTitle(title)
                 .setSmallIcon(R.drawable.caution_sign)
                 .setSound(Uri.parse("android.resource://"+applicationContext.packageName+"/"+R.raw.pika))
+                .setContentIntent(getPendingIntentForBuzz())
     }
 
     fun notify(id:Int, notification:Notification.Builder) {
