@@ -6,6 +6,7 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -17,12 +18,19 @@ import android.widget.BaseAdapter
 import com.burbon13.buzzem.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.functions.FirebaseFunctions
 import data.User
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.contact_ticket.view.*
 import java.util.*
 import java.util.concurrent.locks.ReentrantLock
+import kotlin.collections.HashMap
 import kotlin.collections.HashSet
+import com.google.android.gms.tasks.Continuation
+import com.google.firebase.functions.HttpsCallableResult
+import com.google.android.gms.tasks.Task
+import com.google.firebase.functions.FirebaseFunctionsException
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     private var mAuth: FirebaseAuth = FirebaseAuth.getInstance()
     private val adapter = FriendsAdapter(myFriendsList)
     private val TAG = "MainActivity"
+    private val TAG_FNC = "MainActivityFNC"
     private val lock = ReentrantLock()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,11 +50,38 @@ class MainActivity : AppCompatActivity() {
         //FirebaseDatabase.getInstance().setLogLevel(Logger.Level.DEBUG)
         //myRef = FirebaseDatabase.getInstance().reference
 
+        //backend fun
+
+
         setDataSharedPref()
         lvContacts.adapter = adapter
         Log.d(TAG, "loadFriends()")
         loadFriends()
     }
+
+    private fun playWithTheBackend() {
+        addMessage("hehehehePUALA")
+
+    }
+
+    private fun addMessage(text: String) {
+        val data = HashMap<String, Any>()
+        data.put("text", text)
+        data.put("push", true)
+
+        val mFunctions = FirebaseFunctions.getInstance()
+        mFunctions.getHttpsCallable("addMessageApp")
+                .call(data)
+                .continueWith{
+                    if(it.isSuccessful) {
+                        Log.d(TAG_FNC, "https call good")
+                    } else {
+                        Log.d(TAG_FNC, "https call FUCKING BAD")
+                        Log.d(TAG_FNC, it.exception.toString())
+                    }
+                }
+    }
+
 
     private fun setDataSharedPref() {
         val sharedPref = getSharedPreferences("buzz_app_settings", Context.MODE_PRIVATE)
@@ -156,8 +192,9 @@ class MainActivity : AppCompatActivity() {
                 startActivityForResult(intent,1234)
             }
             R.id.settingsItem -> {
-                val intent = Intent(this, SettingsActivity::class.java)
-                startActivity(intent)
+                //val intent = Intent(this, SettingsActivity::class.java)
+                //startActivity(intent)
+                playWithTheBackend()
             }
         }
 
