@@ -5,7 +5,7 @@ Android application for alerting your friends when you need their attention.
 
 ## How does it work?
 
-As a user, you have multiple contacts (i.e. other users) and you "BUZZ" them (i.e. notify them). The notification consists of turning on and off the camera flash, flashing the screen, playing a song and turning on the vibrations.
+As a user, you have multiple contacts (i.e. other users who have the application installed) and you "BUZZ" them (i.e. notify them). The notification consists of turning on and off the camera flash, flashing the screen, playing a song and turning on the vibrations.
 
 ## UX
 
